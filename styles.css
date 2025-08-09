@@ -1,0 +1,81 @@
+:root {
+  --color-dark-navy: #242742;
+  --color-white: #ffffff;
+}
+
+/* LAYOUT */
+body {
+  background-color: var(--color-dark-navy);
+}
+
+.sub {
+  /* 30em = 480px assuming 1em = 16px */
+  inline-size: min(100%, 30em);
+  margin-inline: auto;
+  background-color: var(--color-white);
+}
+
+.img-container img {
+  /* 30em = 480px assuming 1em = 16px */
+  inline-size: min(100%, 30em);
+}
+
+.content {
+  padding: 40px 24px;
+}
+
+h1 {
+  margin-block-end: 24px;
+}
+
+p {
+  margin-block-end: 24px;
+}
+
+ul {
+  margin-block-end: 40px;
+  list-style-image: url(/assets/images/icon-list.svg);
+  padding-inline-start: 24px;
+}
+
+li {
+  padding-inline-start: 10px;
+  margin-bottom: 10px;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+form {
+  inline-size: min(100%, 327px);
+  margin-inline: auto;
+}
+
+input[type="email"] {
+  display: block;
+  margin-block: 8px 24px;
+  margin-inline: auto;
+  inline-size: 100%;
+  padding: 16px 24px;
+  border-radius: 8px;
+  border-color: rgba(25, 24, 43, 0.25);
+  border-width: 1px;
+}
+
+input[type="email"]::placeholder {
+  color: var(--color-dark-navy);
+  opacity: 50%;
+}
+
+button {
+  all: unset;
+  display: block;
+  padding-block: 16px 14px;
+  text-align: center;
+  background-color: var(--color-dark-navy);
+  color: var(--color-white);
+  border-radius: 8px;
+  inline-size: 100%;
+  margin-inline: auto;
+}
