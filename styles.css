@@ -65,7 +65,7 @@ h1 {
   margin-block-end: 24px;
 }
 
-p {
+.sub p {
   margin-block-end: 24px;
 }
 
@@ -122,4 +122,27 @@ button {
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.5;
+}
+
+.message {
+  /* 30em = 480px assuming 1em = 16px */
+  inline-size: min(100%, 30em);
+  margin-inline: auto;
+  background-color: var(--color-white);
+  height: 100vh;
+  padding-inline: 24px;
+  padding-block: min(18.5vh, 150px) 40px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+h2 {
+  margin-block: 40px 24px;
+}
+
+.hide {
+  display: none;
+  visibility: hidden;
+  height: 0;
 }
