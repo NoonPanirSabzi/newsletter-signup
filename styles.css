@@ -3,6 +3,43 @@
   --color-white: #ffffff;
 }
 
+/* TYPOGRAPHY */
+
+main {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+h1,
+h2 {
+  font-size: clamp(2.5rem, 5.6vw, 3.5rem);
+  color: var(--color-dark-navy);
+  font-weight: 700;
+}
+
+p,
+li {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-dark-navy);
+}
+
+label {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+}
+
+input[type="email"]::placeholder {
+  font-size: 1rem;
+  line-height:  1.5;
+  color: var(--color-dark-navy);
+  opacity: 50%;
+}
+
 /* LAYOUT */
 body {
   background-color: var(--color-dark-navy);
@@ -63,11 +100,6 @@ input[type="email"] {
   border-width: 1px;
 }
 
-input[type="email"]::placeholder {
-  color: var(--color-dark-navy);
-  opacity: 50%;
-}
-
 button {
   all: unset;
   display: block;
@@ -78,4 +110,7 @@ button {
   border-radius: 8px;
   inline-size: 100%;
   margin-inline: auto;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
 }
