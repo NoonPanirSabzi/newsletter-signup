@@ -35,7 +35,7 @@ label {
 
 input[type="email"]::placeholder {
   font-size: 1rem;
-  line-height:  1.5;
+  line-height: 1.5;
   color: var(--color-dark-navy);
   opacity: 50%;
 }
@@ -71,13 +71,22 @@ p {
 
 ul {
   margin-block-end: 40px;
-  list-style-image: url(/assets/images/icon-list.svg);
-  padding-inline-start: 24px;
+  /* 37 = icon-list.svg width + space between icon and text = 21 + 16 */
+  padding-inline-start: 37px;
 }
 
 li {
-  padding-inline-start: 10px;
+  list-style: none;
+  position: relative;
   margin-bottom: 10px;
+}
+
+li::before {
+  content: url(/assets/images/icon-list.svg);
+  position: absolute;
+  top: 2px;
+  /* 37 = icon-list.svg width + space between icon and text = 21 + 16 */
+  left: -37px;
 }
 
 li:last-child {
