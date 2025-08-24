@@ -39,13 +39,17 @@
             <li>Measuring to ensure updates are a success</li>
             <li>And much more!</li>
           </ul>
-          <form action="" method="post">
-            <label for="user-email">Email address</label>
+          <form novalidate id="subscribe-form">
+            <div class="flex-row-container">
+              <label for="user-email">Email address</label>
+              <span id="invalid-input-notif" class="hide">Valid email required</span>
+            </div>
             <input
               type="email"
               name=""
               id="user-email"
               placeholder="email@company.com"
+              class="input"
             />
             <button type="submit">Subscribe to monthly newsletter</button>
           </form>

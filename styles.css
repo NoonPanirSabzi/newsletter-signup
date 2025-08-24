@@ -1,6 +1,8 @@
 :root {
   --color-dark-navy: #242742;
   --color-white: #ffffff;
+  --color-vermellion: #FF6155;
+  --color-invalit-input-bg: rgba(255, 97, 85, 0.15);
 }
 
 /* TYPOGRAPHY */
@@ -33,7 +35,7 @@ label {
   color: var(--color-dark-navy);
 }
 
-input[type="email"]::placeholder {
+.input::placeholder {
   font-size: 1rem;
   line-height: 1.5;
   color: var(--color-dark-navy);
@@ -98,15 +100,20 @@ form {
   margin-inline: auto;
 }
 
-input[type="email"] {
+.input {
+  all: unset;
   display: block;
+  box-sizing: border-box;
   margin-block: 8px 24px;
   margin-inline: auto;
   inline-size: 100%;
   padding: 16px 24px;
   border-radius: 8px;
-  border-color: rgba(25, 24, 43, 0.25);
-  border-width: 1px;
+  border: 1px solid rgba(25, 24, 43, 0.25);
+}
+
+.input:focus {
+  border: 1px solid rgba(25, 24, 43);
 }
 
 button {
@@ -141,8 +148,27 @@ h2 {
   margin-block: 40px 24px;
 }
 
+/* UTILITY CLASSES */
 .hide {
   display: none;
   visibility: hidden;
   height: 0;
+}
+
+.invalid-input {
+  border: 1px solid var(--color-vermellion);
+  background-color: var(--color-invalit-input-bg);
+  color: var(--color-vermellion);
+}
+
+#invalid-input-notif {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--color-vermellion);
+}
+
+.flex-row-container {
+  display: flex;
+  justify-content: space-between;
 }
