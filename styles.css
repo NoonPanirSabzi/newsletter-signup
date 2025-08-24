@@ -96,7 +96,7 @@ li:last-child {
 }
 
 form {
-  inline-size: min(100%, 327px);
+  inline-size: 100%;
   margin-inline: auto;
 }
 
@@ -171,4 +171,47 @@ h2 {
 .flex-row-container {
   display: flex;
   justify-content: space-between;
+}
+
+/* DESKTOP BREAKPOINT */
+/* 70em = 1120px assuming 1em = 16px */
+@media (min-width: 70em) {
+  main {
+    padding-block: 128px;
+  }
+
+  .sub {
+    inline-size: 58em;
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 36px;
+    overflow: hidden;
+  }
+
+  .img-container {
+    padding-block: 24px;
+    padding-inline-end: 24px;
+    min-inline-size: 424px;
+  }
+
+  .content {
+    padding-inline: 64px;
+    padding-block: 98px;
+  }
+
+  .message {
+    inline-size: 31.5em;
+    padding-inline: 64px;
+    padding-block: 48px 64px;
+    border-radius: 36px;
+  }
+
+  .message.show {
+    display: block;
+    height: auto;
+  }
+
+  #confirm-msg {
+    margin-block-end: 40px;
+  }
 }

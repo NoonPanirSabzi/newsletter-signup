@@ -17,6 +17,7 @@ elements.subscribeForm.addEventListener("submit", (e) => {
   if (validEmailRegex.test(userInput)) {
     elements.subContainer.classList.add("hide");
     elements.messageContainer.classList.remove("hide");
+    elements.messageContainer.classList.add("show")
     elements.confirmMsg.innerHTML = `A confirmation email has been sent to <b>${userInput}</b>.
             Please open it and click the button inside to confirm your
             subscription.`;
@@ -31,6 +32,7 @@ elements.subscribeForm.addEventListener("submit", (e) => {
 elements.dissmissBtn.addEventListener("click", () => {
   elements.subContainer.classList.remove("hide");
   elements.messageContainer.classList.add("hide");
+  elements.messageContainer.classList.remove("show")
   elements.userEmail.value = "";
   elements.confirmMsg.innerHTML = "";
 });
