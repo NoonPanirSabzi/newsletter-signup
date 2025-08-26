@@ -3,6 +3,7 @@
   --color-white: #ffffff;
   --color-vermellion: #FF6155;
   --color-invalit-input-bg: rgba(255, 97, 85, 0.15);
+  --gradient-btn: linear-gradient(82deg, #FF6A3A, #FF527B);
 }
 
 /* TYPOGRAPHY */
@@ -116,7 +117,7 @@ form {
   border: 1px solid rgba(25, 24, 43);
 }
 
-button {
+.btn-primary {
   all: unset;
   display: block;
   padding-block: 16px 14px;
@@ -129,6 +130,12 @@ button {
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.5;
+}
+
+.btn-primary:hover {
+  cursor: pointer;
+  background: var(--gradient-btn);
+  box-shadow: 0 16px 32px 0 rgba(255, 97, 85, 0.5);
 }
 
 .message {
