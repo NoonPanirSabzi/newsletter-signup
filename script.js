@@ -9,6 +9,13 @@ const elements = {
 };
 
 const validEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+let isInvalidInput = false;
+
+function setInvalidInputState(isInvalid) {
+  isInvalidInput = isInvalid;
+  elements.userEmail.classList.toggle("invalid-input", isInvalid);
+  elements.invalidInputNotif.classList.toggle("hide", !isInvalid);
+}
 
 function validateEmail(userInput) {
   if (validEmailRegex.test(userInput.value)) {
@@ -28,21 +35,16 @@ elements.subscribeForm.addEventListener("submit", (e) => {
 
   const userInput = elements.userEmail;
   if (validateEmail(userInput)) {
-    togglePage(elements.messageContainer ,elements.subContainer)
-
+    togglePage(elements.messageContainer, elements.subContainer);
+    setInvalidInputState(false);
     elements.confirmMsg.innerHTML = `A confirmation email has been sent to <b>${userInput.value}</b>.
             Please open it and click the button inside to confirm your
             subscription.`;
-    elements.invalidInputNotif.classList.add("hide");
-    userInput.classList.remove("invalid-input");
   } else {
-    elements.invalidInputNotif.classList.remove("hide");
-    userInput.classList.add("invalid-input");
+    setInvalidInputState(true);
   }
 });
 
 elements.dissmissBtn.addEventListener("click", () => {
-  togglePage(elements.subContainer, elements.messageContainer)
-  elements.userEmail.value = "";
-  elements.confirmMsg.innerHTML = "";
+  togglePage(elements.subContainer, elements.messageContainer);
 });
