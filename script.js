@@ -9,6 +9,7 @@ const elements = {
 };
 
 const validEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const userInput = elements.userEmail;
 let isInvalidInput = false;
 
 function setInvalidInputState(isInvalid) {
@@ -30,10 +31,17 @@ function togglePage(showPage, hidePage) {
   elements.messageContainer.classList.toggle("show");
 }
 
+elements.userEmail.addEventListener("input", () => {
+  if (validateEmail(userInput)) {
+    setInvalidInputState(false);
+  } else {
+    setInvalidInputState(true);
+  }
+});
+
 elements.subscribeForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const userInput = elements.userEmail;
   if (validateEmail(userInput)) {
     togglePage(elements.messageContainer, elements.subContainer);
     setInvalidInputState(false);
