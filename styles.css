@@ -184,7 +184,10 @@ h2 {
 /* 70em = 1120px assuming 1em = 16px */
 @media (min-width: 70em) {
   main {
-    padding-block: 128px;
+    /* 34em = 544px is the maximum height of <message> container
+        this responsive padding, instead of fixed padding, doesn't create
+        unnecessary vertical scrollbar in smaller screens */
+    padding-block: min(calc((100vh - 34em) / 2), 128px);
   }
 
   .sub {
